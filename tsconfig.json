@@ -1,3 +1,31 @@
 {
-  "extends": "@tsconfig/react-native/tsconfig.json"
+  "extends": "@tsconfig/react-native/tsconfig.json",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext", "dom"],
+    "jsx": "react-native",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true, // Enable error reporting when a local variables aren't read.
+    "noUnusedParameters": true, // Raise an error when a function parameter isn't read.
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    // ======================== below these line for import without using ../../../ -> start here.
+    "baseUrl": "./src",
+    "paths": {
+      "src/*": ["src/*/index", "src/*"]
+    }
+    // ======================== above these line for import without using ../../../ -> end here.
+  },
+  "exclude": [
+    "node_modules",
+    "babel.config.js",
+    "metro.config.js"
+    // "jest.config.js"
+  ]
 }
