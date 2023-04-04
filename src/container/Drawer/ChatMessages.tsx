@@ -6,7 +6,6 @@ import {
   FlatList,
   TouchableOpacity,
   TextInput,
-  RefreshControl,
 } from 'react-native';
 import {Layout} from 'components';
 import {IMessage} from 'interfaces/IMessage';
