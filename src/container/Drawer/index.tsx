@@ -1,4 +1,5 @@
 import {createDrawerNavigator} from '@react-navigation/drawer';
+import {theme} from 'styles/theme';
 
 import ChatMessages from './ChatMessages';
 
@@ -13,9 +14,18 @@ const DrawerNavigation = () => {
     <Drawer.Navigator
       initialRouteName="ChatMessages"
       screenOptions={{
-        drawerStyle: {backgroundColor: '#f00'},
+        drawerStyle: {backgroundColor: theme.colors.blue1, padding: 10},
+        drawerActiveBackgroundColor: theme.colors.blue2,
+        drawerActiveTintColor: '#fff',
+        drawerInactiveBackgroundColor: theme.colors.blue4,
+        headerStyle: {backgroundColor: theme.colors.blue3},
+        headerTintColor: '#fff',
       }}>
-      <Drawer.Screen name="ChatMessages" component={ChatMessages} />
+      <Drawer.Screen
+        name="ChatMessages"
+        component={ChatMessages}
+        options={{drawerLabel: 'Chat Messages', headerTitle: 'Chat Messages'}}
+      />
     </Drawer.Navigator>
   );
 };
